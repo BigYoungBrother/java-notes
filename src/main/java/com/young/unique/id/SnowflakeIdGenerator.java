@@ -20,6 +20,7 @@ public class SnowflakeIdGenerator {
 
     /**
      * 支持的最大机器id，结果是31 (这个移位算法可以很快的计算出几位二进制数所能表示的最大十进制数)
+     * -1L的机器表示为  0xffffffff
      */
     private static final long MAX_WORKER_ID = -1L ^ (-1L << WORKER_ID_BITS_LENGTH);
 
