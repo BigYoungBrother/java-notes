@@ -12,7 +12,7 @@ import java.util.UUID;
  * @Date 2021-05-20 18:58
  */
 @Service
-public class MyUuidGenerator {
+public class MyUuidGeneratorService {
 
     /**
      * 随机生成uuid-包含分割符

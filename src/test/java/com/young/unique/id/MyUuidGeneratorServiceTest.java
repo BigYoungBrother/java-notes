@@ -18,21 +18,21 @@ import org.springframework.test.context.junit4.SpringRunner;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class MyUuidGeneratorTest {
+class MyUuidGeneratorServiceTest {
 
     @Autowired
-    private MyUuidGenerator myUuidGenerator;
+    private MyUuidGeneratorService myUuidGeneratorService;
 
     @Test
     void uuidGeneratorWithDivider() {
-        String uuidStr = myUuidGenerator.uuidGeneratorWithDivider();
+        String uuidStr = myUuidGeneratorService.uuidGeneratorWithDivider();
         Assert.assertNotNull(uuidStr);
         log.info(uuidStr);
     }
 
     @Test
     void uuidGeneratorNoDivider() {
-        String uuidStr = myUuidGenerator.uuidGeneratorNoDivider();
+        String uuidStr = myUuidGeneratorService.uuidGeneratorNoDivider();
         Assert.assertNotNull(uuidStr);
         log.info(uuidStr);
     }
