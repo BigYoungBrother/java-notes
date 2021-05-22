@@ -1,7 +1,5 @@
 package com.young.unique.id;
 
-import org.springframework.stereotype.Service;
-
 import java.util.UUID;
 
 /**
@@ -11,15 +9,14 @@ import java.util.UUID;
  * @author Young
  * @Date 2021-05-20 18:58
  */
-@Service
-public class MyUuidGeneratorService {
+public class UuidGeneratorUtil {
 
     /**
      * 随机生成uuid-包含分割符
      *
      * @return
      */
-    public String uuidGeneratorWithDivider() {
+    public static String uuidGeneratorWithDivider() {
         return UUID.randomUUID().toString();
     }
 
@@ -28,7 +25,7 @@ public class MyUuidGeneratorService {
      *
      * @return
      */
-    public String uuidGeneratorNoDivider() {
+    public static String uuidGeneratorNoDivider() {
         return UUID.randomUUID().toString().replace("-", "");
     }
 
