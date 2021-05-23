@@ -14,6 +14,7 @@ public interface ElectronicGoodsFactory {
     /**
      * 制造手机
      *
+     * @param phoneName
      * @return
      */
     Phone getPhone(String phoneName);
