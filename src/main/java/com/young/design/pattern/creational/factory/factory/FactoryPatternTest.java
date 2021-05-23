@@ -3,6 +3,8 @@ package com.young.design.pattern.creational.factory.factory;
 import com.young.design.pattern.creational.factory.elegoods.phone.Phone;
 
 /**
+ * 工厂方法测试类
+ *
  * @author Young
  * @Date 2021-03-27 22:40
  */
