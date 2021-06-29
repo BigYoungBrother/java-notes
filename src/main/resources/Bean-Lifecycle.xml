@@ -10,7 +10,11 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.spri
     <!-- 实现了用户自定义初始化和销毁方法 -->
     <bean id="book" class="com.young.bean.load.Book" init-method="myPostConstruct" destroy-method="myPreDestroy">
         <!-- 注入bean 属性名称 -->
-        <property name="bookName" value="thingking in java"/>
+        <property name="bookName" value="thinking in java"/>
+    </bean>
+
+    <bean id="bookClass" class="com.young.bean.load.SubBookClass" init-method="myPostConstruct" destroy-method="myPreDestory">
+        <property name="bookSystem" value="Java System" />
     </bean>
 
     <!--引入自定义的BeanPostProcessor-->
