@@ -8,17 +8,21 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.spri
     <context:component-scan base-package="com.young.bean.load"/>
 
     <!-- 实现了用户自定义初始化和销毁方法 -->
-    <bean id="book" class="com.young.bean.load.Book" init-method="myPostConstruct" destroy-method="myPreDestroy">
+    <bean id="book" class="com.young.bean.load.Book" init-method="myPostConstruct"
+          destroy-method="myPreDestroy">
         <!-- 注入bean 属性名称 -->
         <property name="bookName" value="thinking in java"/>
     </bean>
+    <bean id="myBeanPostProcessor" class="com.young.bean.load.MyBeanPostProcessor"/>
+    <bean id="myBeanFactoryPostProcessor" class="com.young.bean.load.MyBeanFactoryPostProcessor"/>
+    <bean id="myInstantiationAwareBeanPostProcessor" class="com.young.bean.load.MyInstantiationAwareBeanPostProcessor"/>
+    <bean id="myMergedBeanDefinitionPostProcessor" class="com.young.bean.load.MyMergedBeanDefinitionPostProcessor"/>
+    <bean id="mySmartInitializingSingleton" class="com.young.bean.load.MySmartInitializingSingleton"/>
 
-    <bean id="bookClass" class="com.young.bean.load.SubBookClass" init-method="myPostConstruct" destroy-method="myPreDestory">
-        <property name="bookSystem" value="Java System" />
+    <!--循环依赖-->
+    <bean id="loopClassA" class="com.young.bean.load.LoopClassA" autowire="byType">
     </bean>
-
-    <!--引入自定义的BeanPostProcessor-->
-    <bean class="com.young.bean.load.MyBeanPostProcessor"/>
-    <bean class="com.young.bean.load.MyBeanFactoryPostProcessor"/>
+    <bean id="loopClassB" class="com.young.bean.load.LoopClassB" autowire="byType">
+    </bean>
 
 </beans>

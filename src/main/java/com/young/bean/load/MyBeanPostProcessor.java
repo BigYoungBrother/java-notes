@@ -4,28 +4,21 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
- * MyBeanPostProcessor
+ * BeanPostProcessor
  *
  * @author Young
- * @Date 2021-06-17 23:01
+ * @Date 2021-07-17 16:00
  */
 public class MyBeanPostProcessor implements BeanPostProcessor {
-
-    // 容器加载的时候会加载一些其他的bean，会调用初始化前和初始化后方法
-    // 这次只关注book(bean)的生命周期
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof Book) {
-            System.out.println("MyBeanPostProcessor.postProcessBeforeInitialization");
-        }
+        System.out.println("BeanPostProcessor#postProcessBeforeInitialization(Object bean, String beanName)\nbean实例化和初始化之后，初始化方法执行之前，可以修改bean，比如返回一个包装类，如果不需要修改bean则返回原bean实例");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof Book) {
-            System.out.println("MyBeanPostProcessor.postProcessAfterInitialization");
-        }
+        System.out.println("BeanPostProcessor#postProcessAfterInitialization(Object bean, String beanName)\nbean的初始化方法执行之后，可以修改bean，比如返回一个包装类，如果不需要修改bean则返回原bean实例");
         return bean;
     }
 }
